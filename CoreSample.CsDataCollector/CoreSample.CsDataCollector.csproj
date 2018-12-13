@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>cs_data_collector</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

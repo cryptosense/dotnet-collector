@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
   <RunConfiguration>
-    <TestAdaptersPaths>E:\CoreSample\CoreSample.CsDataCollector\bin\Debug</TestAdaptersPaths>
+    <TestAdaptersPaths>E:\CoreSample\CoreSample.CsDataCollector\bin\Release</TestAdaptersPaths>
   </RunConfiguration>
   <DataCollectionRunSettings>
     <DataCollectors>
       <DataCollector friendlyName="CsDataCollector">
+        <Configuration>
+          <TracerPath>E:\profiler\x64\Release\cs_dotnet_tracer.dll</TracerPath>
+          <OutputDir>E:\CoreSample\CoreSample.Tests\output</OutputDir>
+	</Configuration>
       </DataCollector>
     </DataCollectors>
   </DataCollectionRunSettings>
