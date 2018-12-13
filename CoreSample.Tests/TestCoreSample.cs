@@ -37,5 +37,21 @@ namespace CoreSample.Tests
                 }
             );
         }
+
+        [TestMethod]
+        public void TestAesCbc()
+        {
+            byte[] message = new byte[] { 0, 1, 2 };
+
+            byte[] result = Program.AesCbc(message);
+
+            CollectionAssert.AreEqual(
+                new byte[] {
+                    0x87, 0x88, 0x42, 0x78, 0x22, 0x01, 0x90, 0x22,
+                    0x9c, 0x7d, 0x8f, 0xb3, 0xab, 0x11, 0x34, 0xc3,
+                },
+                result
+            );
+        }
     }
 }
