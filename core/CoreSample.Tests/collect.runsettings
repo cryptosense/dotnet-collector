@@ -7,9 +7,9 @@
     <DataCollectors>
       <DataCollector friendlyName="CsDataCollector">
         <Configuration>
-          <TracerPath>E:\profiler\x64\Release\cs_dotnet_tracer.dll</TracerPath>
+          <TracerPath>E:\profiler\build-win\src\Debug\cs_dotnet_tracer.dll</TracerPath>
           <OutputDir>E:\CoreSample\CoreSample.Tests\output</OutputDir>
-	</Configuration>
+        </Configuration>
       </DataCollector>
     </DataCollectors>
   </DataCollectionRunSettings>

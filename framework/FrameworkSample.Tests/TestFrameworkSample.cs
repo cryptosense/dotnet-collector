@@ -1,16 +1,26 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
-namespace CoreSample.Tests
+namespace FrameworkSample.Tests
 {
     [TestClass]
-    public class TestCoreSample
+    public class TestFrameworkSample
     {
+        [TestMethod]
+        [Ignore("Expected to fail if data collector not setup")]
+        public void TestEnv()
+        {
+            var result = Environment.GetEnvironmentVariable("COR_ENABLE_PROFILING");
+
+            Assert.AreEqual("1", result);
+        }
+
         [TestMethod]
         public void TestMd5()
         {
             byte[] message = new byte[] { 0, 1, 2 };
 
-            byte[] result = CoreSample.Program.Md5(message);
+            byte[] result = Program.Md5(message);
 
             CollectionAssert.AreEqual(
                 result,
@@ -26,7 +36,7 @@ namespace CoreSample.Tests
         {
             byte[] message = new byte[] { 0, 1, 2 };
 
-            byte[] result = CoreSample.Program.Sha1(message);
+            byte[] result = Program.Sha1(message);
 
             CollectionAssert.AreEqual(
                 result,
@@ -46,11 +56,11 @@ namespace CoreSample.Tests
             byte[] result = Program.AesCbc(message);
 
             CollectionAssert.AreEqual(
+                result,
                 new byte[] {
                     0x87, 0x88, 0x42, 0x78, 0x22, 0x01, 0x90, 0x22,
                     0x9c, 0x7d, 0x8f, 0xb3, 0xab, 0x11, 0x34, 0xc3,
-                },
-                result
+                }
             );
         }
     }

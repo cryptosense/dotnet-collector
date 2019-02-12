@@ -1,9 +1,18 @@
+using System;
 using Xunit;
 
 namespace CoreSample.XUnitTests
 {
     public class TestCoreSample
     {
+        [Fact(Skip = "Expected to fail if data collector not setup")]
+        public void TestEnv()
+        {
+            var result = Environment.GetEnvironmentVariable("CORECLR_ENABLE_PROFILING");
+
+            Assert.Equal("1", result);
+        }
+
         [Fact]
         public void TestMd5()
         {
@@ -13,8 +22,8 @@ namespace CoreSample.XUnitTests
 
             Assert.Equal(
                 new byte[] {
-                    185, 95, 103, 246, 30, 187, 3, 97,
-                    150, 34, 215, 152, 244, 95, 194, 211
+                    0xb9, 0x5f, 0x67, 0xf6, 0x1e, 0xbb, 0x03, 0x61,
+                    0x96, 0x22, 0xd7, 0x98, 0xf4, 0x5f, 0xc2, 0xd3,
                 },
                 result
             );
